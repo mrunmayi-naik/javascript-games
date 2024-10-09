@@ -1,0 +1,59 @@
+const squares = document.querySelectorAll('.square')
+const mole = document.querySelector('.mole')
+const timeLeft = document.querySelector('#time-left')
+const score = document.querySelector('#score')
+const highestScoreDisplay = document.querySelector('#highest-score') //newline
+
+let result = 0 
+let hitPosition
+let currentTime = 60
+let timerId = null
+let highestScore = localStorage.getItem('highestScore') || 0 //newline
+
+highestScoreDisplay.textContent = highestScore //newline
+
+function randomSquare() {
+    squares.forEach(square => {
+      square.classList.remove('mole')
+    })
+
+    let randomSquare = squares[Math.floor(Math.random() * 9) ]
+    randomSquare.classList.add('mole')
+
+    hitPosition = randomSquare.id
+}
+
+squares.forEach(square => {
+    square.addEventListener('mousedown', () => {
+      if (square.id == hitPosition) {
+        result++
+        score.textContent = result
+        hitPosition = null
+      }
+    })
+})
+
+function moveMole(){    
+    timerId = setInterval(randomSquare, 500)
+}
+moveMole()
+
+function countDown() {
+   currentTime--
+   timeLeft.textContent = currentTime
+
+   if (currentTime == 0) {
+    clearInterval(countDownTimerId)
+    clearInterval(timerId)
+    alert('GAME OVER! Your Final score is ' + result)
+
+    if (result > highestScore) { //newline
+      highestScore = result
+      localStorage.setItem('highestScore', highestScore)
+      highestScoreDisplay.textContent = highestScore
+    }
+   }
+}
+
+let countDownTimerId = setInterval(countDown, 1000)
+
