@@ -2,30 +2,33 @@
 
 body{
     margin: 0;
-    background-image: url(images/cat.jpeg);
+    /* background-image: url(images/cat.jpeg); */
+    background-color: #82b5e2; /* Set the background color of the body */
 }
 
 
 .grid {
     display: flex;
-    width: 606px;
-    height: 606px;
+    width: 400px;
+    height: 300px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    background-color: lightgray;
 }
 
 h2 {
     position: relative;
     text-align: center;
     font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
 }
 
 .square {
-    height: 200px;
-    width: 200px;
-    border: solid black 1px;
+    height: 120px;
+    width: 120px;
+    border: solid black 2px;
 }
 
 .mole {

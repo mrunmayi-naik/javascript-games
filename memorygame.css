@@ -1,6 +1,47 @@
-#grid {  
+/* Make sure the body takes up the full height of the screen */
+body {
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Aligns the title and grid vertically */
+    background-color: #82b5e2; /* Set the background color of the body */
+}
+
+/* Styling for the grid container */
+#grid {
     width: 400px;
     height: 300px;
-    display: flex; 
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    justify-content: center; /* Centers the items inside the grid */
+    align-items: center; /* Vertically center items inside the grid */
+    background-color: lightgray; /* Optional: gives a background to the grid */
+}
+
+/* Optional styling for the score */
+h3 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 20px; /* Space between score and grid */
+}
+
+/* Add some margin and styling for highest score */
+h3 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#highest-score {
+    font-weight: bold;
+    color: green;  /* Highlight the highest score */
+}
+
+
+#result {
+    font-weight: bold;
+    font-size: 1.5em;
 }
