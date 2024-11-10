@@ -2,12 +2,17 @@
 
 body{
     margin: 0;
-    /* background-image: url(images/cat.jpeg); */
-    background-color: #82b5e2; /* Set the background color of the body */
+    background-image: url(images/cute\ wallpaper\ nyan\ cat_\ _\)\)\).jfif);
+    background-size: cover;    /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image in the viewport */
+    background-attachment: fixed; /* Makes the background stay fixed when scrolling */
+    height: 100vh;              /* Sets the height to 100% of the viewport */
+    width: 100%; 
+    /* background-color: #82b5e2; Set the background color of the body */
 }
 
 
-.grid {
+/* .grid {
     display: flex;
     width: 400px;
     height: 300px;
@@ -16,7 +21,19 @@ body{
     align-items: center;
     margin: 0 auto;
     background-color: lightgray;
+} */
+
+.grid {
+    display: grid;  /* Use CSS grid instead of flex */
+    grid-template-columns: repeat(3, 120px);  /* Create 3 columns, each 120px */
+    grid-template-rows: repeat(3, 120px);     /* Create 3 rows, each 120px */
+    gap: 0px;  /* Optional: gap between the squares */
+    width: 360px;  /* Total width: 3 * 120px (each square) */
+    height: 360px; /* Total height: 3 * 120px (each square) */
+    margin: 0 auto;
+    background-color: rgb(44, 77, 150);
 }
+
 
 h2 {
     position: relative;
